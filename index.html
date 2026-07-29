@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Luma — Japanese & Spanish</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Libre+Caslon+Display&display=swap');
+    :root{--ink:#252521;--cream:#f8f5ee;--coral:#ed6b54;--green:#245c4c;--line:#ded9cf}
+    *{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:"DM Sans",sans-serif}button,input{font:inherit}button{cursor:pointer}
+    header{height:78px;padding:0 6vw;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .brand{font:28px "Libre Caslon Display";display:flex;align-items:center;gap:9px}.brand b{font:700 17px "DM Sans";background:var(--coral);color:white;padding:9px;border-radius:10px;transform:rotate(-5deg)}
+    nav{display:flex;gap:30px;font-size:14px;font-weight:600}nav span:first-child{border-bottom:3px solid var(--coral);padding:30px 0}
+    .lang{border:1px solid var(--line);background:white;border-radius:99px;padding:9px 14px;font-weight:700}
+    .hero{display:grid;grid-template-columns:1fr 1fr;min-height:500px;border-bottom:1px solid var(--line)}.copy{padding:70px 7vw}.eyebrow{font-size:10px;letter-spacing:.15em;color:#89857d;font-weight:700}
+    h1{font:clamp(55px,7vw,84px)/.94 "Libre Caslon Display";letter-spacing:-.04em;margin:14px 0 25px}h1 em{color:var(--coral);font-weight:400}.lead{color:#6f6b64;line-height:1.7;max-width:500px}
+    .primary{border:0;background:var(--ink);color:white;border-radius:8px;padding:15px 20px;font-weight:700;box-shadow:0 4px 0 #000;margin-top:17px}.stats{display:flex;gap:35px;margin-top:42px;padding-top:25px;border-top:1px solid var(--line)}.stats strong{display:block;font-size:18px}.stats small{color:#8a867f}
+    .art{position:relative;overflow:hidden;background:#e8bdb1}.sun{width:310px;height:310px;border-radius:50%;background:var(--coral);position:absolute;right:14%;top:15%}.mountain{width:490px;height:400px;background:#587568;position:absolute;bottom:-200px;left:10%;transform:rotate(45deg);border-radius:20px}
+    .torii{position:absolute;bottom:65px;left:50%;transform:translateX(-50%);width:190px;height:220px;border-top:22px solid #a8402f}.torii:before,.torii:after{content:"";position:absolute;top:18px;width:23px;height:190px;background:#a8402f}.torii:before{left:35px}.torii:after{right:35px}.torii i{position:absolute;left:-12px;right:-12px;top:28px;border-top:18px solid #bd4a35}
+    .phrase{position:absolute;right:6%;bottom:30px;background:#fffdf8;padding:18px 65px 18px 20px;box-shadow:0 15px 45px #4b302a33}.phrase small,.phrase strong,.phrase span{display:block}.phrase strong{font-size:27px;margin:5px 0}.phrase span{font-size:12px;color:#777}
+    main{max-width:1300px;margin:auto;padding:55px 6vw 90px}h2{font:36px "Libre Caslon Display";margin:6px 0 25px}.lessons{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.lesson{background:#fffdf8;border:1px solid var(--line);border-radius:11px;padding:18px;display:flex;align-items:center;gap:15px}.icon{width:58px;height:58px;border-radius:9px;display:grid;place-items:center;background:#f4d1c7;font-size:25px;font-weight:700}.lesson:nth-child(2) .icon{background:#f1dc9d}.lesson:nth-child(3) .icon{background:#d9d1e8}.lesson h3{font-size:15px;margin:3px 0}.lesson small{font-size:10px;color:#8d8981}.lesson button{margin-left:auto;border:1px solid var(--line);background:white;border-radius:50%;width:36px;height:36px}
+    .lower{display:grid;grid-template-columns:1.3fr .7fr;gap:18px;margin-top:38px}.review{background:var(--green);color:white;border-radius:12px;padding:30px}.review h2{margin-bottom:8px}.review p{color:#bfd0c9;font-size:13px}.review button{border:0;background:transparent;color:white;font-weight:700;padding:10px 0}.backup{border:1px solid var(--line);background:#fffdf8;border-radius:12px;padding:26px}.backup h3{font:24px "Libre Caslon Display";margin:8px 0}.backup p{font-size:12px;color:#777;line-height:1.5}.backup div{display:flex;gap:8px}.backup button{flex:1;border:1px solid var(--line);border-radius:7px;background:white;padding:10px;font-weight:700}.backup button:first-child{background:var(--ink);color:white}
+    .coach{position:fixed;right:25px;bottom:24px;border:0;background:var(--ink);color:white;border-radius:99px;padding:13px 20px;font-weight:700;box-shadow:0 12px 35px #0004}.panel{display:none;position:fixed;right:25px;bottom:85px;width:350px;background:#fffdf8;border:1px solid var(--line);border-radius:15px;box-shadow:0 20px 60px #0003;overflow:hidden}.panel.open{display:block}.chathead{padding:16px;border-bottom:1px solid var(--line);font-weight:700}.messages{height:220px;overflow:auto;padding:16px}.message{background:#f0ece4;padding:11px;border-radius:10px;margin-bottom:9px;font-size:13px;line-height:1.5}.message.me{background:var(--green);color:white;margin-left:45px}.composer{display:flex;padding:12px;border-top:1px solid var(--line);gap:7px}.composer input{flex:1;min-width:0;padding:10px;border:1px solid var(--line);border-radius:8px}.composer button{border:0;background:var(--coral);color:white;border-radius:8px;width:39px}.toast{display:none;position:fixed;bottom:25px;left:50%;transform:translateX(-50%);background:#222;color:white;padding:12px 18px;border-radius:99px;font-size:12px}
+    @media(max-width:800px){nav{display:none}.hero{grid-template-columns:1fr}.art{min-height:420px}.lessons,.lower{grid-template-columns:1fr}.copy{padding:55px 7vw}.panel{left:10px;right:10px;width:auto}}
+  </style>
+</head>
+<body>
+  <header><div class="brand"><b>ル</b>Luma</div><nav><span>Learn</span><span>Practice</span><span>Progress</span></nav><button class="lang" id="lang">🇯🇵 Japanese</button></header>
+  <section class="hero">
+    <div class="copy"><p class="eyebrow">YOUR DAILY PATH</p><h1>Speak a little.<br><em>Live a lot.</em></h1><p class="lead">Build real-world confidence with bite-sized lessons, smart review, and a coach who’s always ready to talk.</p><button class="primary" onclick="completeLesson()">Continue learning &nbsp; →</button><div class="stats"><div><strong>🔥 <span id="streak">12</span></strong><small>day streak</small></div><div><strong>✦ <span id="xp">1,280</span></strong><small>total XP</small></div><div><strong>◉ 34</strong><small>words learned</small></div></div></div>
+    <div class="art"><div class="sun"></div><div class="mountain"></div><div class="torii"><i></i></div><div class="phrase"><small>PHRASE OF THE DAY</small><strong id="native">はじめまして</strong><span id="translation">Nice to meet you</span></div></div>
+  </section>
+  <main><p class="eyebrow">TODAY · 18 MIN LEFT</p><h2>Your learning path</h2><div class="lessons">
+    <article class="lesson"><span class="icon">あ</span><div><small>LESSON 1</small><h3>Hiragana rhythm</h3><small>5 min · 10 XP</small></div><button onclick="completeLesson(this)">→</button></article>
+    <article class="lesson"><span class="icon">☕</span><div><small>LESSON 2</small><h3>Ordering at a café</h3><small>8 min · 18 XP</small></div><button onclick="completeLesson(this)">→</button></article>
+    <article class="lesson"><span class="icon">声</span><div><small>LESSON 3</small><h3>Shadow & speak</h3><small>6 min · 15 XP</small></div><button onclick="completeLesson(this)">→</button></article>
+  </div><div class="lower"><article class="review"><p class="eyebrow">SMART REVIEW</p><h2>4 words are fading</h2><p>A quick review now keeps them in your long-term memory.</p><button onclick="completeLesson()">Review now &nbsp; →</button></article><article class="backup"><p class="eyebrow">YOUR PROGRESS, YOURS</p><h3>Keep your journey safe</h3><p>Download a private copy or restore your learning history on this device.</p><div><button onclick="backup()">Back up</button><button onclick="document.getElementById('restore').click()">Restore</button></div><input hidden id="restore" type="file" accept=".json" onchange="restoreFile(this.files[0])"></article></div></main>
+  <button class="coach" onclick="panel.classList.toggle('open')">✦ &nbsp; Ask Kumo</button><aside class="panel" id="panel"><div class="chathead">✦ Kumo · AI language coach</div><div class="messages" id="messages"><div class="message">こんにちは! Want to rehearse a café conversation or unpack a tricky phrase?</div></div><div class="composer"><input id="draft" placeholder="Ask Kumo…" onkeydown="if(event.key==='Enter')send()"><button onclick="send()">↑</button></div></aside><div class="toast" id="toast"></div>
+  <script>
+    let state=JSON.parse(localStorage.getItem("luma-index")||'{"xp":1280,"streak":12,"language":"Japanese"}');
+    const xp=document.getElementById("xp"),lang=document.getElementById("lang"),native=document.getElementById("native"),translation=document.getElementById("translation"),panel=document.getElementById("panel");
+    function render(){xp.textContent=state.xp.toLocaleString();lang.textContent=state.language==="Japanese"?"🇯🇵 Japanese":"🇪🇸 Spanish";native.textContent=state.language==="Japanese"?"はじめまして":"Mucho gusto";translation.textContent="Nice to meet you";localStorage.setItem("luma-index",JSON.stringify(state))}
+    function notify(t){toast.textContent=t;toast.style.display="block";setTimeout(()=>toast.style.display="none",2200)}
+    lang.onclick=()=>{state.language=state.language==="Japanese"?"Spanish":"Japanese";render()}
+    function completeLesson(btn){state.xp+=5;if(btn){btn.textContent="✓";btn.disabled=true}render();notify("Nice work — +5 XP")}
+    function backup(){const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([JSON.stringify({version:1,...state},null,2)],{type:"application/json"}));a.download="luma-progress.json";a.click();notify("Backup downloaded")}
+    function restoreFile(file){if(!file)return;const r=new FileReader();r.onload=()=>{try{const v=JSON.parse(r.result);if(typeof v.xp!=="number")throw 0;state={...state,...v};render();notify("Progress restored")}catch{notify("Invalid backup file")}};r.readAsText(file)}
+    function send(){const input=document.getElementById("draft");if(!input.value.trim())return;messages.innerHTML+=`<div class="message me">${input.value.replace(/[<>]/g,"")}</div><div class="message">${state.language==="Japanese"?"いいですね！ Try 「カフェラテを一つお願いします」— one café latte, please.":"¡Muy bien! Try “Un café con leche, por favor.”"}</div>`;input.value="";messages.scrollTop=messages.scrollHeight}
+    render();
+  </script>
+</body>
+</html>
